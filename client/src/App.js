@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Background from "./components/Background";
+import MapContainer from "./components/MapContainer";
+import AddDestination from "./components/AddDestination";
+import SearchPlace from "./components/SearchPlace"
 
 function App(props) {
 
@@ -13,16 +16,18 @@ function App(props) {
     setFile(bgurl);
   }
   return (
-    <div className="App" >
-            {/* <Background onChange={onChange}/> */}
+    <div className="App" style={{
+      backgroundSize: "cover",
+      backgroundImage: `url(` + bg + `)`,
+      margin: 0,
+    }}
+    >
+               <SearchPlace />
 
-      <div className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h2>Welcome to React</h2>
-      </div>
-      <p className="App-intro">
-        To get started, edit <code>src/App.js</code> and save to reload.
-      </p>
+            <MapContainer onChange={onChange} 
+            />
+            {/* <AddDestination /> */}
+
     </div>
   );
 }
