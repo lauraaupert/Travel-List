@@ -1,0 +1,1 @@
+//Pass the search coordinates to this marker with a special logo and make it appear
